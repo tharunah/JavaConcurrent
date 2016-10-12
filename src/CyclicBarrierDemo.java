@@ -1,7 +1,11 @@
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
+import java.util.concurrent.ExecutorCompletionService;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
 
 public class CyclicBarrierDemo {
 
@@ -30,15 +34,16 @@ public class CyclicBarrierDemo {
 				}
 			}
 		};
-		
+		//new StringBuffer()
 		ExecutorService[] executorService = new ExecutorService[] {
 				                             Executors.newSingleThreadExecutor(),
 				                             Executors.newSingleThreadExecutor(),
 				                             Executors.newSingleThreadExecutor()
 		};
+
 		for(ExecutorService executorService2 : executorService){
 			executorService2.execute(task);
-			executorService2.shutdown();
+			//executorService2.shutdown();
 		}
 	}
 

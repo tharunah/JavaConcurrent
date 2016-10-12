@@ -6,6 +6,7 @@ public class ConvertNumber {
 		int decimal = 0;
 		int binary = number;
 		int power = 0;
+		ThreadLocal<String> t = new ThreadLocal<>();
 		while (binary != 0) {
 			int lastDigit = binary % 10;
 			if(lastDigit >1){

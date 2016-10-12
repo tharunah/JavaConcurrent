@@ -11,9 +11,7 @@ public class ConvertNumberRunningJUnit {
 		if(result.wasSuccessful()){
 			System.out.println("Everything looks good ....");
 		}
-		for (Failure failure : result.getFailures()) {
-			System.out.println(failure.getMessage());
-		}
+		for (Failure failure : result.getFailures()) System.out.println(failure.getMessage());
 				
 	}
 	

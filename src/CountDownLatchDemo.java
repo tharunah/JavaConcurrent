@@ -9,17 +9,20 @@ public class CountDownLatchDemo {
 		for (int i = 0; i < N; i++)
 			new Thread(new Worker(startSignal, doneSignal)).start();
 		System.out.println("About to let thread processed");
+	
 		startSignal.countDown();
 		System.out.println("Doih work");
 		System.out.println("Waiting for thread to finish");
 		doneSignal.await();
 		System.out.println("Main thread terminating");
+
 	}
+
+
 
 }
 
 class Worker implements Runnable {
-
 	public static int N = 5;
 	CountDownLatch startSignal;
 	CountDownLatch doneSignal;

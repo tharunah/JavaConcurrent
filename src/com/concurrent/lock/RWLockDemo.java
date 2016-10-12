@@ -3,8 +3,11 @@ package com.concurrent.lock;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
@@ -16,6 +19,10 @@ public class RWLockDemo {
 
 	public static void main(String[] args) {
 
+		
+		BlockingQueue n = new LinkedBlockingQueue();
+		
+		 
 		final Names names = new Names();
 
 		class NamedThread implements ThreadFactory {
